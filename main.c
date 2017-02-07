@@ -6,7 +6,7 @@
 /*   By: hkalia <hkalia@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 10:59:49 by hkalia            #+#    #+#             */
-/*   Updated: 2017/02/07 14:57:17 by hkalia           ###   ########.fr       */
+/*   Updated: 2017/02/07 15:08:55 by hkalia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,20 @@ static char	g_spec[11][4] = {{"sa"}, {"sb"}, {"ss"}, {"pa"}, {"pb"}, {"ra"}
 static void	(*g_funcs[11]) (t_nbrs *a, t_nbrs *b) = {sa, sb, ss, pa, pb, ra, rb
 													, rr, rra, rrb, rrr};
 
-int8_t	check(char *s1, char *s2)
+bool	sorted(t_nbrs *a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->len - 1)
+	{
+		GRD(a->ptr[i] < a->ptr[i + 1], 0);
+		++i;
+	}
+	return (1);
+}
+
+bool	check(char *s1, char *s2)
 {
 	int	i;
 
@@ -163,17 +176,11 @@ int8_t	reader(t_nbrs *a, t_nbrs *b)
 		free(line);
 		line = 0;
 		cap = 0;
-		i = 0;
-		printf("a:");
-		while (i < a->len)
-			printf(" %d", a->ptr[i++]);
-		printf("\n");
-		i = 0;
-		printf("b:");
-		while (i < b->len)
-			printf(" %d", b->ptr[i++]);
-		printf("\n");
 	}
+	if (sorted(a))
+		printf("OK");
+	else
+		printf("KO");
 	return (0);
 }
 
@@ -193,16 +200,6 @@ int8_t	init(int *nbrs, int len)
 		a.ptr[i] = nbrs[(len - 1) - i];
 		++i;
 	}
-	i = 0;
-	printf("a:");
-	while (i < a.len)
-		printf(" %d", a.ptr[i++]);
-	printf("\n");
-	i = 0;
-	printf("b:");
-	while (i < b.len)
-		printf(" %d", b.ptr[i++]);
-	printf("\n");
 	GRD2(reader(&a, &b) == -1, free(a.ptr), free(b.ptr), -1);
 	return (0);
 }

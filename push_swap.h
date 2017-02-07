@@ -6,7 +6,7 @@
 /*   By: hkalia <hkalia@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 10:57:41 by hkalia            #+#    #+#             */
-/*   Updated: 2017/02/07 13:29:30 by hkalia           ###   ########.fr       */
+/*   Updated: 2017/02/07 15:08:38 by hkalia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef struct	s_nbrs
 {
