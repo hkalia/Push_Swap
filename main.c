@@ -6,7 +6,7 @@
 /*   By: hkalia <hkalia@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 10:59:49 by hkalia            #+#    #+#             */
-/*   Updated: 2017/02/07 15:08:55 by hkalia           ###   ########.fr       */
+/*   Updated: 2017/02/09 11:17:43 by hkalia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,8 +190,8 @@ int8_t	init(int *nbrs, int len)
 	t_nbrs	b;
 	int		i;
 
-	GRD((a.ptr = malloc(sizeof(int) * (len + 3))) == 0, -1);
-	GRD((b.ptr = malloc(sizeof(int) * (len + 3))) == 0, -1);
+	GRD((a.ptr = malloc(sizeof(int) * (len + 1))) == 0, -1);
+	GRD((b.ptr = malloc(sizeof(int) * (len + 1))) == 0, -1);
 	a.len = len;
 	b.len = 0;
 	i = 0;
