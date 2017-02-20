@@ -1,0 +1,9 @@
+[submodule "libarr"]
+	path = libarr
+	url = https://github.com/hkalia/libarr.git
+[submodule "libftprintf"]
+	path = libftprintf
+	url = https://github.com/hkalia/libftprintf.git
+[submodule "libft"]
+	path = libft
+	url = https://github.com/hkalia/libft.git
